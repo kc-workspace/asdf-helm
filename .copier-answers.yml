@@ -1,0 +1,15 @@
+## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+
+## Template version
+version: 1
+## Autogenerate
+_commit: v1.0.0-6-ge21711b
+_src_path: .
+app_download_link: https://get.helm.sh/helm-v${version}-${os}-${arch}.tar.gz
+app_download_output: helm
+app_git_repo: https://github.com/helm/helm
+app_name: helm
+git_remote: https://github.com/kc-workspace/asdf-helm.git
+plugin_author: Kamontat Chantrachirathumrong
+plugin_name: asdf-helm
+plugin_org: kc-workspace
