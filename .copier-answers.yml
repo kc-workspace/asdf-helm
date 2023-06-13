@@ -1,6 +1,6 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v1.2.1
+_commit: v1.2.2
 _src_path: gh:kc-workspace/asdf-plugin-template.git
 app_download_link: https://get.helm.sh/helm-v${version}-${os}-${arch}.tar.gz
 app_git_repo: https://github.com/helm/helm
