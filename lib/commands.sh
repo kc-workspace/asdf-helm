@@ -11,6 +11,8 @@ export ASDF_PLUGIN_APP_REPO="https://github.com/helm/helm"
 export ASDF_PLUGIN_NAME="asdf-helm"
 export ASDF_PLUGIN_REPO="https://github.com/kc-workspace/asdf-helm"
 
+# shellcheck source-path=SCRIPTDIR/common.sh
+source "${ASDF_PLUGIN_PATH:?}/lib/common.sh"
 # shellcheck source-path=SCRIPTDIR/utils.sh
 source "${ASDF_PLUGIN_PATH:?}/lib/utils.sh"
 
