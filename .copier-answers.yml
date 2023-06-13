@@ -1,10 +1,6 @@
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-
-## Template version
-version: 1
-## Autogenerate
-_commit: v1.0.0-6-ge21711b
-_src_path: .
+_commit: v1.1.1
+_src_path: gh:kc-workspace/asdf-plugin-template.git
 app_download_link: https://get.helm.sh/helm-v${version}-${os}-${arch}.tar.gz
 app_download_output: helm
 app_git_repo: https://github.com/helm/helm

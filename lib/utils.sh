@@ -136,17 +136,26 @@ asdf_get_os() {
   uname | tr '[:upper:]' '[:lower:]'
 }
 
-## Print current arch
+## Print current arch (support override by $ASDF_OVERRIDE_ARCH)
 ## e.g. `asdf_get_arch`
 asdf_get_arch() {
   local arch="${ASDF_OVERRIDE_ARCH:-}"
-  [ -z "$arch"] && arch="$(uname -m)"
+  if [ -n "$arch" ]; then
+    asdf_info "user override arch to '%s'" "$arch"
+    printf "%s" "$arch"
+    return 0
+  fi
+
+  arch="$(uname -m)"
 
   case "$arch" in
-  'x86_64') arch="amd64" ;;
-  'powerpc64le' | 'ppc64le') arch="ppc64le" ;;
-  'aarch64') arch="arm64" ;;
-  'armv7l') arch="arm" ;;
+  x86_64) arch="amd64" ;;
+  x86 | i686 | i386) arch="386" ;;
+  powerpc64le | ppc64le) arch="ppc64le" ;;
+  armv5*) arch="armv5" ;;
+  armv6*) arch="armv6" ;;
+  armv7*) arch="arm" ;;
+  aarch64) arch="arm64" ;;
   esac
 
   printf "%s" "$arch"
@@ -209,8 +218,9 @@ asdf_download() {
   asdf_debug "downloaded app at %s" "$tmppath"
 
   if [[ "$tmpfile" =~ \.tar\.gz$ ]]; then
-    asdf_debug "extracting tar.gz file"
-    asdf_extract_tar "$tmppath" "$outpath" &&
+    asdf_debug "extracting %s file to %s" \
+      "$tmppath" "$outdir"
+    asdf_extract_tar "$tmppath" "$outdir" &&
       rm "$tmppath"
   else
     asdf_debug "moving app from %s to %s" \
@@ -245,13 +255,14 @@ asdf_gh_latest() {
 
   asdf_debug "redirect url: %s" "$url"
   if [[ "$url" == "$repo/releases" ]]; then
-    asdf_debug "use 'tail' mode get latest version"
+    asdf_debug "use '%s' mode to resolve latest" "tail"
     version="$(asdf_list_versions | tail -n1)"
   elif [[ "$url" != "" ]]; then
-    asdf_debug "use 'gh-latest' mode get latest version"
     version="$(printf "%s\n" "$url" | sed 's|.*/tag/v\{0,1\}||')"
+    asdf_debug "use '%s' mode to resolve latest" "github"
   fi
 
+  asdf_debug "latest version is '%s'" "$version"
   [ -n "$version" ] &&
     printf "%s" "$version" ||
     return 1
