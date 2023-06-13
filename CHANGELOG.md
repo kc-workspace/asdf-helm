@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/kc-workspace/asdf-helm/compare/v1.1.0...v1.2.0) (2023-06-13)
+
+
+### Features
+
+* migrate to template v1.3.1 ([567f65f](https://github.com/kc-workspace/asdf-helm/commit/567f65f8f11dac4679cfa63f193c907d90bb7f79))
+
 ## [1.1.0](https://github.com/kc-workspace/asdf-helm/compare/v1.0.0...v1.1.0) (2023-06-13)
 
 
