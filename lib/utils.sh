@@ -37,7 +37,7 @@ asdf_debug() {
 asdf_fetch() {
   local options=()
   local url="$1"
-  local token
+  local token=""
 
   if [[ "$url" =~ ^https://github.com ]]; then
     token="${GITHUB_API_TOKEN:-}"
@@ -52,7 +52,7 @@ asdf_fetch() {
       --show-error
     )
 
-    [ -n "$CURL_OPTIONS" ] &&
+    [ -n "${CURL_OPTIONS:-}" ] &&
       options+=("${CURL_OPTIONS[@]}")
 
     if [ -n "$token" ]; then
