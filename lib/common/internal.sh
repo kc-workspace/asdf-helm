@@ -39,9 +39,18 @@ __asdf_bin_download() {
       "$checksum_url"
     kc_asdf_debug "checksum output: %s" "$tmpdir/$checksum_tmpfile"
     kc_asdf_fetch_file "$checksum_url" "$tmpdir/$checksum_tmpfile"
-    if ! grep "$tmpfile" "$tmpdir/$checksum_tmpfile" >"$tmpdir/$checksum_file"; then
-      kc_asdf_throw 9 "cannot found checksum entry for download name %s" \
-        "$tmpfile"
+
+    if command -v _kc_asdf_custom_checksum >/dev/null; then
+      kc_asdf_debug "use custom function to update checksum file"
+      _kc_asdf_custom_checksum \
+        "$tmpfile" \
+        "$tmpdir/$checksum_tmpfile" \
+        "$tmpdir/$checksum_file"
+    else
+      if ! grep "$tmpfile" "$tmpdir/$checksum_tmpfile" >"$tmpdir/$checksum_file"; then
+        kc_asdf_throw 9 "cannot found checksum key (%s) from download file" \
+          "$tmpfile"
+      fi
     fi
 
     if kc_asdf_checksum "$tmpdir/$checksum_file"; then
@@ -100,18 +109,26 @@ __asdf_bin_install() {
   local filename="$KC_ASDF_APP_NAME"
   inpath="$indir/${KC_ASDF_DOWNLOAD_LOC:?}"
   outpath="$outdir/$filename"
-  if ! mv "$inpath" "$outpath" &&
-    chmod +x "$outpath"; then
+
+  kc_asdf_debug "moving input (%s) to output (%s)" \
+    "$inpath" "$outpath"
+  if ! mv "$inpath" "$outpath"; then
     kc_asdf_throw 9 "cannot move directory from %s to %s" \
       "$inpath" "$outpath"
   fi
 
-  kc_asdf_debug "moved input (%s) to output (%s)" \
-    "$inpath" "$outpath"
+  outdir="${ASDF_INSTALL_PATH:?}"
+  for file in "$outdir"/bin/*; do
+    kc_asdf_debug "exec: chmod +x $file"
+    chmod +x "$file"
+  done
 
   # shellcheck disable=SC2011
   kc_asdf_debug "install directory: [%s]" \
-    "$(ls "$outpath" | xargs echo)"
+    "$(ls "$outdir" | xargs echo)"
+  # shellcheck disable=SC2011
+  kc_asdf_debug "bin directory: [%s]" \
+    "$(ls "$outdir/bin" | xargs echo)"
   kc_asdf_step_success "install" "successfully"
 }
 
