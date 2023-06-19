@@ -1,6 +1,6 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v1.3.3-17-g42600e6
+_commit: v1.3.3-18-g5760cb8
 _src_path: .
 app_description: help manage kubernetes applications
 app_name: helm
