@@ -1,6 +1,6 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v1.3.3-18-g5760cb8
+_commit: v1.3.3-20-g3695eb1
 _src_path: .
 app_description: help manage kubernetes applications
 app_name: helm
@@ -20,7 +20,7 @@ custom_arch_yaml:
     x86_64: amd64
 custom_non_stable_version: (-src|-dev|-latest|-stm|[-\.]rc|-alpha|-beta|[-\.]pre|-next|snapshot|master)
 custom_os_enabled: false
-download_checksum_cmd: sha256sum
+download_checksum_cmd: '256'
 download_checksum_enabled: true
 download_checksum_link: https://get.helm.sh/helm-v{version}-{os}-{arch}.tar.gz.sha256sum
 download_link: https://get.helm.sh/helm-v{version}-{os}-{arch}.tar.gz
