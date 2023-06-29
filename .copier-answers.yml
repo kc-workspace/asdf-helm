@@ -1,6 +1,6 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v1.3.3-40-gd1daac1
+_commit: v1.3.3-44-g75d58a8
 _src_path: /Users/kamontat/Desktop/Personal/asdf-plugin-template
 app_desc: help manage kubernetes applications
 app_name: helm
