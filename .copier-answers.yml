@@ -1,10 +1,22 @@
 ---
 ## Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v1.3.3-50-gd56c40f
+_commit: v1.3.3-69-g7cc549e
 _src_path: /Users/kamontat/Desktop/Personal/asdf-plugin-template
+addon_yaml:
+    checksum: true
+    download: true
+    github: true
+    gpg: false
+    help: true
+    install: true
+    python: false
+    system: true
+    tags: true
+    version: true
 app_desc: help manage kubernetes applications
 app_name: helm
 app_repo: https://github.com/helm/helm
+app_type: standalone
 app_website: https://helm.sh
 archive_conf_path: ''
 archive_conf_strip: 1
