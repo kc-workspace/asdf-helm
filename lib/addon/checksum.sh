@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+__kc_asdf_checksum_create() {
+  if [ "$#" -eq 1 ]; then
+    local filename="$1"
+    echo "  $1"
+  else
+    local filename="$1" checksum="$2"
+    echo "$checksum  $filename"
+  fi
+}
+
 ## Check shasum of input path
 ## usage: `kc_asdf_checksum '/tmp/hello.tar.gz' 'https://example.com'`
 ## variables:
@@ -29,9 +39,10 @@ kc_asdf_checksum() {
     "$cs_tmppath" "$cs_path"
   if command -v _kc_asdf_custom_checksum >/dev/null; then
     kc_asdf_debug "$ns" "use custom function to update checksum file"
-    _kc_asdf_custom_checksum "$filename" "$cs_tmppath" "$cs_path"
+    _kc_asdf_custom_checksum __kc_asdf_checksum_create \
+      "$filename" "$cs_tmppath" >"$cs_path"
   else
-    if ! grep "$filename" "$cs_tmppath" >"$cs_path"; then
+    if ! grep -E "$filename$" "$cs_tmppath" >"$cs_path"; then
       kc_asdf_error "$ns" "missing %s on checksum file (%s)" \
         "$filename" "$cs_tmppath"
       return 1

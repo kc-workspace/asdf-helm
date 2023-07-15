@@ -1,4 +1,6 @@
-#!/usr/bin/env bash## Environment variables
+#!/usr/bin/env bash
+
+## Environment variables
 ## https://asdf-vm.com/plugins/create.html#environment-variables-overview
 
 ## General information

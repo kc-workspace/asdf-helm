@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
+kc_asdf_load_addon "fetch"
 kc_asdf_load_addon "github"
-
 kc_asdf_load_addon "tags"
 
 __asdf_bin() {

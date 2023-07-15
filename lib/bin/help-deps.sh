@@ -16,9 +16,8 @@ __asdf_bin() {
   kc_asdf_optional \
     kc_asdf_help_header "Dependencies"
   local deps=(git curl sed grep mktemp xargs tr)
-
   deps+=(sha256sum shasum)
-  
+  deps+=(tar unzip)
 
   for dep in "${deps[@]}"; do
     echo "$dep"
