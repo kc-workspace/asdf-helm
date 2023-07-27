@@ -34,7 +34,7 @@
 
 ### Miscellaneous
 
-* improve log message for readiability ([a6f38af](https://github.com/kc-workspace/asdf-helm/commit/a6f38afb4e02bf9563acc6ad803ed13815c25a2a))
+* improve log message for readability ([a6f38af](https://github.com/kc-workspace/asdf-helm/commit/a6f38afb4e02bf9563acc6ad803ed13815c25a2a))
 * update terminology ([053021d](https://github.com/kc-workspace/asdf-helm/commit/053021dd04b943fde7910b297c0af0c10228bea0))
 * use asdf instead of ASDF ([8ffa750](https://github.com/kc-workspace/asdf-helm/commit/8ffa750fb46444eaecbac17f59ff89b8488eca1e))
 
