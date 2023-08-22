@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.3.0](https://github.com/kc-workspace/asdf-helm/compare/v1.2.0...v1.3.0) (2023-07-27)
+
+
+### Features
+
+* **core:** applied template ([f58e182](https://github.com/kc-workspace/asdf-helm/commit/f58e1824d7e2ae671ef1839035c2ce77869a3573))
+* **core:** applied template ([78c1695](https://github.com/kc-workspace/asdf-helm/commit/78c1695781db5c12593ec3f3e44aee7ddd8d41e4))
+* **core:** applied template ([3b13231](https://github.com/kc-workspace/asdf-helm/commit/3b13231f040772221d0888fd81d29da163325fa8))
+* **core:** applied template ([459aef9](https://github.com/kc-workspace/asdf-helm/commit/459aef9d005d13ac94f99a28b6db8dfc085f7f77))
+* **core:** applied template ([73a812d](https://github.com/kc-workspace/asdf-helm/commit/73a812ddeebcbaaf7a8b010ccb5394e6efc3b586))
+* **core:** applied template [autocommit] ([c9fbe69](https://github.com/kc-workspace/asdf-helm/commit/c9fbe69a113de6ffb14d8756261d9c3dda63dda2))
+* **core:** applied template [autocommit] ([36b9aac](https://github.com/kc-workspace/asdf-helm/commit/36b9aacfed85dbff8abaae9d6d193a5103deb25e))
+* **core:** applied template [autocommit] ([6e81bc8](https://github.com/kc-workspace/asdf-helm/commit/6e81bc86452d04bdd1c423328b72b3be4b2fef6d))
+* migrate new template ([e318312](https://github.com/kc-workspace/asdf-helm/commit/e318312973ca11a49505b87e587741aa0d6d5e9e))
+* migrate to new template ([517f558](https://github.com/kc-workspace/asdf-helm/commit/517f5580fdb6092b2fbc1cac86763efedc206619))
+
+
+### Improvements
+
+* improve README and fix lints ([dc4c720](https://github.com/kc-workspace/asdf-helm/commit/dc4c72006cdd9ec2a087001c093d08b1006c5970))
+* update cspell config structure ([66543bc](https://github.com/kc-workspace/asdf-helm/commit/66543bcc949bcc9c31cabb12e7139fac8e5c0abf))
+* update plugin from template [autocommit] ([2a67b02](https://github.com/kc-workspace/asdf-helm/commit/2a67b02fd90c16dc9812854761073f484d775519))
+* update plugin from template [autocommit] ([1802028](https://github.com/kc-workspace/asdf-helm/commit/180202802949e1cce9ce6c74122eb5001f8fcd46))
+* update plugin from template [autocommit] ([8169ef3](https://github.com/kc-workspace/asdf-helm/commit/8169ef31300784ed57f8520256c64cabb48bcc79))
+
+
+### Bugfixes
+
+* add checksum support on macOS ([a0ec2e5](https://github.com/kc-workspace/asdf-helm/commit/a0ec2e5f07c2987e84a96e11cb57945a289b8585))
+* **docs:** readme link invalid ([f7b6c0c](https://github.com/kc-workspace/asdf-helm/commit/f7b6c0c406b911eb2aa5936a214ad6b67b55ed6b))
+
+
+### Miscellaneous
+
+* improve log message for readability ([a6f38af](https://github.com/kc-workspace/asdf-helm/commit/a6f38afb4e02bf9563acc6ad803ed13815c25a2a))
+* update terminology ([053021d](https://github.com/kc-workspace/asdf-helm/commit/053021dd04b943fde7910b297c0af0c10228bea0))
+* use asdf instead of ASDF ([8ffa750](https://github.com/kc-workspace/asdf-helm/commit/8ffa750fb46444eaecbac17f59ff89b8488eca1e))
+
 ## [1.2.0](https://github.com/kc-workspace/asdf-helm/compare/v1.1.0...v1.2.0) (2023-06-13)
 
 
