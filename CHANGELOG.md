@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.2](https://github.com/kc-workspace/asdf-helm/compare/v1.3.1...v1.3.2) (2023-12-03)
+
+
+### Improvements
+
+* update plugin from template [autocommit] ([a58fd41](https://github.com/kc-workspace/asdf-helm/commit/a58fd418b51f6b42b9ec94f8c5051703a1f4a6bf))
+
+
+### Miscellaneous
+
+* **docs:** update typo on changelog ([c43d8ad](https://github.com/kc-workspace/asdf-helm/commit/c43d8ad73bf83443584a95f433dd8c124075f6e0))
+
 ## [1.3.1](https://github.com/kc-workspace/asdf-helm/compare/v1.3.0...v1.3.1) (2023-11-06)
 
 
